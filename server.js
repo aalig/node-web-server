@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.port || 3000;
+
 // Make a new express app
 // 'views' is the defalut directory express uses for your templates
 var app = express();
@@ -52,6 +54,6 @@ app.get('/about', (req, res) => {
 });
 
 // Bind the application to a port on the machine
-app.listen(3000, () => {
-    console.log('Server is up and running on port 3000');
+app.listen(port, () => {
+    console.log(`Server is up and running on port ${port}`);
 });
